@@ -23,6 +23,9 @@ COPY --from=builder /root/.ollama /root/.ollama
 # Expose the default Ollama port
 EXPOSE 11434
 
+# Map a local repository to persist and save a local copy of the model
+VOLUME ["/local/repository:/root/.ollama"]
+
 # Set the entrypoint to start the Ollama server
 ENTRYPOINT ["ollama"]
 CMD ["serve"]
