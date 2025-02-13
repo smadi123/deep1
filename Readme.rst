@@ -1,7 +1,10 @@
-d
-1. # Buil the Image with the name "ollama-deepseek"
-     To build the Docker image, navigate to the directory containing the Dockerfile and run the following command:
-	docker build -t deepseek-v2:tagName /home/smadi/projects/deep1
+
+1. Build the Image with the name "ollama-deepseek"
+##################################################
+
+**	To build the Docker image, navigate to the directory containing the Dockerfile and run the following command:
+
+$	docker build -t deepseek-v2:tagName /home/smadi/projects/deep1
 
 $	docker build -t ollama-deepseek:latest .
 
