@@ -1,30 +1,52 @@
+Run "DeepSeek" Locally
+######################
 
-1. Build the Image with the name "ollama-deepseek"
-##################################################
+.. contents:: Install Neccessary Tools
+   :local:
+   :class: no-bullets
 
-**	To build the Docker image, navigate to the directory containing the Dockerfile and run the following command:
+Build the Image with the name "ollama-deepseek"
+===============================================
 
-$	docker build -t deepseek-v2:tagName /home/smadi/projects/deep1
+To build the Docker image, navigate to the directory containing the Dockerfile and run the following command:
 
-$	docker build -t ollama-deepseek:latest .
+.. code-block:: bash
+
+	docker build -t deepseek-v2:tagName /home/smadi/projects/deep1
+
+	docker build -t ollama-deepseek:latest .
 
 ------------------------------------------------------------------
 
-2. # run the ollama-deepseek container
+Run the ollama-deepseek container
+=================================
 
-	docker run -p -p 11434:11434  5000:5000 deepseekv2
-$	docker run -d -p 11434:11434 --name deepseekv2 deepseek-v2:latest
+.. code-block:: bash
+
+	docker run -d -p 11434:11434  5000:5000 deepseekv2
+
+	docker run -d -p 11434:11434 --name deepseekv2 deepseek-v2:latest
 
 ------------------------------------------------------------------
 
-3. # Run Streamlit app
+Run Streamlit app
+=================
 
 Navigate to .venv bin folder and run (source activate)
 cd ~/python-projects/qa_app/.venvQAapp/bin
-$	source activate
+
+.. code-block:: bash
+
+	source activate
 
 Install Requirments
-$	pip install -r requirements.txt 
+
+.. code-block:: bash
+
+	pip install -r requirements.txt 
 
 run the App
-$	streamlit run ./streamlit/app.py
+
+.. code-block:: bash
+
+	streamlit run ./streamlit/app.py
