@@ -35,17 +35,37 @@ chain_with_history = RunnableWithMessageHistory(
     history_messages_key="chat_history",
 )
 
+# Add custom CSS for RTL direction
+st.markdown(
+    """
+    <style>
+    body {
+        direction: rtl;
+        text-align: right;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 st.title("نظام الذكاء الاصطناعي لكلية القيادة والأركان")
+
 
 for message in st.session_state["langchain_messages"]:
     role = "user" if message.type == "human" else "assistant"
     with st.chat_message(role):
-        st.markdown(message.content)
+        st.markdown(
+            f'<div style="text-align: right; direction: rtl;">{message.content}</div>',
+            unsafe_allow_html=True
+        )
 
 question = st.chat_input("Your Question")
 if question:
     with st.chat_message("user"):
-        st.markdown(question)
+        st.markdown(
+            f'<div style="text-align: right; direction: rtl;">{question}</div>',
+            unsafe_allow_html=True
+        )
     response = chain_with_history.stream(
         {"input": question}, config={"configurable": {"session_id": "any"}}
     )
