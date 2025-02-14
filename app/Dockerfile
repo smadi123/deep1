@@ -28,5 +28,5 @@ COPY . .
 EXPOSE 8000
 
 # Set the entrypoint and default command
-ENTRYPOINT ["python"]
+ENTRYPOINT ["streamlit", "run"]
 CMD ["app.py"]
