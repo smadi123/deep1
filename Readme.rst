@@ -105,4 +105,35 @@ To run the services, navigate to the project directory and use the following com
 
 This command will build the images and start the containers. You can then access the Streamlit app in your browser at `http://localhost:8501`.
 
+# Create volume for model persistence                                                                            
 
+.. code-block:: bash
+
+	docker volume create ollama-data                                                                                        
+
+# Build custom image
+
+.. code-block:: bash
+
+	docker build -t deepseek-ollama -f ollama/Dockerfile .
+
+
+# Run container with volume
+
+.. code-block:: bash
+
+	docker run -d \
+  	--name ollama \
+  	-v ollama-data:/root/.ollama \
+  	-p 11434:11434 \
+  	deepseek-ollama
+
+# Download and persist model
+
+.. code-block:: bash
+
+	docker exec ollama ollama pull deepseek-r1:14b
+
+.. code-block:: bash
+
+	docker exec -it ollama ollama list 
