@@ -123,7 +123,7 @@ This command will build the images and start the containers. You can then access
 .. code-block:: bash
 
 	docker run -d \
-  	--name ollama \
+  	--name OllamaContainerName \
   	-v ollama-data:/root/.ollama \
   	-p 11434:11434 \
   	deepseek-ollama
@@ -132,11 +132,11 @@ This command will build the images and start the containers. You can then access
 
 .. code-block:: bash
 
-	docker exec ollama ollama pull deepseek-r1:14b
+	docker exec OllamaContainerName ollama pull deepseek-r1:14b
 
 .. code-block:: bash
 
-	docker exec -it ollama ollama list 
+	docker exec -it OllamaContainerName ollama list 
 
 .. code-block:: bash
 
