@@ -137,3 +137,7 @@ This command will build the images and start the containers. You can then access
 .. code-block:: bash
 
 	docker exec -it ollama ollama list 
+
+.. code-block:: bash
+
+	docker exec -it ollama ollama run deepseek-r1:14b 
