@@ -1,4 +1,5 @@
 from langchain_ollama.chat_models import ChatOllama
+#import ollama
 import streamlit as st
 
 # Adding History
@@ -59,7 +60,7 @@ for message in st.session_state["langchain_messages"]:
             unsafe_allow_html=True
         )
 
-question = st.chat_input("Your Question")
+question = st.chat_input("السؤال الخاص بك")
 if question:
     with st.chat_message("user"):
         st.markdown(
